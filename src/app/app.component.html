@@ -5,18 +5,20 @@
   </h1>
 </div>
 
-<form (ngSubmit)="addTodoInput$.next(todoInput)" #addTodoForm="ngForm">
-  <input
-    type="text"
-    name="todoInput"
-    [(ngModel)]="todoInput"
-    minlength="3"
-    required
-  >
-  <button
-    type="submit"
-    [disabled]="!addTodoForm.form.valid"
-  >ADD</button>
+<form (ngSubmit)="newTodoInput$.next(todoInput)" #addTodoForm="ngForm">
+  <fieldset>
+    <input
+      type="text"
+      name="todoInput"
+      [(ngModel)]="todoInput"
+      minlength="3"
+      required
+    >
+    <button
+      type="submit"
+      [disabled]="!addTodoForm.form.valid">
+      Add</button>
+  </fieldset>
 </form>
 
 <app-todo-list

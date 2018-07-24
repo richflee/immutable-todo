@@ -27,12 +27,12 @@ export class AppComponent implements OnDestroy, OnInit {
     }
   ]);
 
-  addTodoInput$ = new Subject<string>();
+  newTodoInput$ = new Subject<string>();
   unsubscribe$ = new Subject<void>();
 
   ngOnInit() {
 
-    this.addTodoInput$
+    this.newTodoInput$
       .pipe(
         tap(this.addTodo.bind(this)),
         takeUntil(this.unsubscribe$)
